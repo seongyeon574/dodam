@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta property="og:title" content="도담도담."/>
+        <meta property="og:description" content="우리나라의 퓨전 국악과 함께 100권의 한국 소설을 미리 읽어볼 수 있는 서비스를 제공합니다."/>
+        <meta property="og:image" content="{{ url_for('static', filename='ogimage.png') }}"/>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <!--fade-up-->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+
+        <!-- JS -->
+        <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+        <!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/112.9/umd/popper.min.js"-->
+        <!--                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"-->
+        <!--                crossorigin="anonymous"></script>-->
+        <!--        add fadeInUp class only when element is visible within viewport-->
+        <!--        consider http://imakewebthings.com/waypoints/-->
+
+
+        <!-- 구글폰트 -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap"
+              rel="stylesheet">
+        <title>도담도담</title>
+
+
+        <!-- style -->
+        <style type="text/css">
+
+            * {
+                font-family: 'Nanum Myeongjo', serif;
+                background-image: url('../static/background.jpg');
+                background-position: top;
+            }
+
+            /*fade-in-up 효과 코드*/
+            body {
+                padding: 40px;
+            }
+
+            /* Animation */
+            @keyframes fadeInUp {
+                from {
+                    transform: translate3d(0, 40px, 0)
+                }
+
+                to {
+                    transform: translate3d(0, 0, 0);
+                    opacity: 1
+                }
+            }
+
+            @-webkit-keyframes fadeInUp {
+                from {
+                    transform: translate3d(0, 40px, 0)
+                }
+
+                to {
+                    transform: translate3d(0, 0, 0);
+                    opacity: 1
+                }
+            }
+
+            /*.animated {*/
+            /*    animation-duration: 1s;*/
+            /*    animation-fill-mode: both;*/
+            /*    -webkit-animation-duration: 1s;*/
+            /*    -webkit-animation-fill-mode: both*/
+            /*}*/
+
+            /*.animatedFadeInUp {*/
+            /*    opacity: 0*/
+            /*}*/
+
+            /*.fadeInUp {*/
+            /*    opacity: 0;*/
+            /*    animation-name: fadeInUp;*/
+            /*    -webkit-animation-name: fadeInUp;*/
+            /*}*/
+
+            .title {
+                color: dimgrey;
+                text-align: center;
+                padding-top: 250px;
+            }
+
+            .navyBtn{
+                border : 0;
+            }
+
+
+
+
+
+        </style>
+
+        <script></script>
+
+
+    </head>
+
+
+    <body>
+
+        <!--fade-in-up code-->
+        <div class="animated animatedFadeInUp fadeInUp title">
+
+            <button type="button" class="navyBtn" onClick="location.href='index2.html'">
+                <img src="../static/book_icon.png">
+            </button>
+            <h6> </h6>
+            <h3>"도담도담"은,</h3>
+            <h6>우리나라의 퓨전 국악과 함께 100권의 한국 소설을 미리 읽어볼 수 있는 서비스를 제공합니다.</h6>
+            <h6>책의 분위기와 꼭 맞는 음악과 함께 책을 읽고 책을 대여해보세요.</h6>
+        </div>
+
+
+    </body>
+
+
+</html>
+
