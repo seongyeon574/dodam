@@ -20,6 +20,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
                 integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
                 crossorigin="anonymous"></script>
+        <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
 
 
         <!-- 구글폰트 -->
@@ -37,47 +38,21 @@
             }
 
             body {
-                background-color: whitesmoke;
-                margin: 0;
+                /*책표지 수정, 사이즈 체크(다른 컴퓨터에서도 꽉차게 들어가는건지, 내 컴퓨터에서만 맞는건지 후자일 확률이 매우 높음*/
+                background-image: url('../static/book-inside_대지 1.png');
             }
 
-            .nav-container {
-                display: flex;
-                flex-direction: row;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                background-color: darkseagreen;
-                list-style-type: none;
+            .music {
+                /*display: flex;*/
+                width: 570px;
+                height: 130px;
+                padding-top: 130px;
+                padding-left: 80px;
             }
-
-            .nav-item {
-                padding: 5px;
-                cursor: pointer;
-                text-align: center;
-                text-decoration: white;
-                color: white;
-            }
-
-
-            #abc {
-                display: flex;
-                flex-direction: row;
-                padding-top: 10px;
-            }
-
-
-            #box {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                width: 260px;
-                height: 300px;
-                margin: 0 -5px;
-            }
-
 
             .book-item {
+                /*display: flex;*/
+                margin-top: 80px;
                 background-image: url("../static/book_example.jpeg");
                 background-size: cover;
                 background-position: center;
@@ -86,40 +61,35 @@
                 margin-left: 45px;
             }
 
-            .shelf-item {
-                background-image: url("../static/bookshelf.png");
-                background-size: cover;
-                background-position: center;
-                width: 262px;
-                height: 38px;
-                margin: 0 5px;
+            .explanation {
+                margin-top: 70px;
+                padding-left: 300px;
+
             }
 
 
         </style>
 
-<!--페이지로 넘어오면, 알아서 책을 띄워주는 함수 만들어서 실행시키기.-->
-<!--시간 있으면 navbar에서 책 검색할 수 있도록 검색엔진 만들기.-->
-
+        <script></script>
 
 
     </head>
 
     <body>
-        <nav>
-            <ul class="nav-container">
-                <li class="nav-item">도담도담.</li>
-                <li class=nav-item"><a href=""></a></li>
-            </ul>
-        </nav>
+    <!--왼쪽 페이지 : flexbox로 책표지, [제목+저자], 음악까지 내가원하는모양으로 배치가능한지 확인.-->
 
-        <div id="abc">
-            <div id="box">
-                <div class='book-item' onClick="location.href='index3.html'"></div>
-                <div class='shelf-item'></div>
-            </div>
+        <div class='book-item'></div>
+            <!--<a class="explanation" href="#" class="book-title">책 제목. </a>-->
+            <!--<p class="explanation" class="author">작가.</p>-->
 
+
+        <div class="music">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/286011346&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
         </div>
+
+    <!--오른쪽 페이지 : 책속에서 크롤링해서 그 페이지 안에서 스크롤해서 책속에서 내용을 다 보여줄수있는지 확인-->
 
 
     </body>
