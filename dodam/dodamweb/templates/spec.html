@@ -64,7 +64,7 @@
                 flex: none;
                 width: 50%;
                 padding-left: 10%;
-                background-color: #bfbab078;
+                /*background-color: #bfbab078;*/
             }
 
             .main {
@@ -76,14 +76,14 @@
             }
 
 
-            .book_cover{
+            .book_item{
                 display: flex;
                 margin-top: 15%;
                 width: 175px;
                 height: 245px;
             }
 
-            .book-item {
+            .book_cover {
                 display: flex;
                 background-size: cover;
                 background-position: center;
@@ -131,26 +131,21 @@
 
                 <div class="aside">
                     <div class="book_info">
-                    <div class="book_cover"><img class="book-item"></div>
+                    <div class="book_item"><img class="book_cover" scr="{{book_cover}}"></div>
 
                     <div class="explanation">
-                        <a href="#" class="title">제목.</a>
-                        <p class="author">저자.</p>
-                        <p class="exp">책소개.</p>
+                        <a href="#" class="title">{{title}}</a>
+                        <p class="author">{{author}}</p>
+                        <p class="exp">{{exp}}</p>
                     </div>
                         </div>
 
-                    <div class="music">
-                        <iframe width="100%" height="166" scrolling="no" frameborder="no"
-                                allow="autoplay"
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/286011346&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-                        </iframe>
-                    </div>
+                    <div class="music">{{music}}</div>
 
                 </div>
 
                 <div class="main">
-                    <p class="inthebook">책속에서내용.</p>
+                    <p class="inthebook">{{inthebook}}</p>
                 </div>
             </div>
         </div>
