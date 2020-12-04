@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta property="og:title" content="도담도담."/>
         <meta property="og:description" content="우리나라의 퓨전 국악과 함께 100권의 한국 소설을 미리 읽어볼 수 있는 서비스를 제공합니다."/>
-        <meta property=img src="{% static 'background.jpg' %}">
+        <meta property=img src="{% static 'metaimage.png' %}">
 
 
         <!-- Bootstrap CSS -->
@@ -39,13 +39,15 @@
             * {
                 font-family: 'Nanum Myeongjo', serif;
 
+
             }
 
             /*fade-in-up 효과 코드*/
             body {
                 padding: 40px;
                 background-image: url('../static/background.jpg');
-                background-size : 100%;
+                background-size : auto;
+                /*background-size : 100%;*/
                 background-repeat: no-repeat;
 
 
@@ -100,11 +102,13 @@
 
             .img-button {
                 background: url('../static/book_icon.png');
-                border: none;
+                border : none;
                 width: 50px;
                 height: 50px;
                 cursor: pointer;
             }
+
+
 
 
         </style>
@@ -120,7 +124,7 @@
             <h6></h6>
             <h3>"도담도담"은,</h3>
             <h6>우리나라의 퓨전 국악과 함께 100권의 한국 소설을 미리 읽어볼 수 있는 서비스를 제공합니다.</h6>
-            <h6>책의 분위기와 꼭 맞는 음악과 함께 책을 읽고 책을 대여해보세요.</h6>
+            <h6>책 아이콘을 클릭하여 분위기와 꼭 맞는 음악과 함께 책을 읽고 책을 대여해보세요.</h6>
         </div>
 
 
