@@ -64,7 +64,7 @@
             #abc {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
+                flex-wrap : wrap;
                 padding-top: 10px;
             }
 
@@ -98,16 +98,6 @@
                 margin: 0 5px;
             }
 
-            .btn-group {
-                margin-left: 35%;
-                margin-right: 35%;
-            }
-
-            .btn-secondary {
-                margin-right : 2px;
-
-            }
-
 
         </style>
 
@@ -118,7 +108,7 @@
                 showBook();
             });
 
-
+/*
             function showBook(title) {
                 // 1. 리뷰 목록을 서버에 요청하기
                 url = `/book?title=${title}`
@@ -146,13 +136,13 @@
             function makeBook(bookcover) {
                 let tempHtml =
                     `<div class ="books-box">
-                        <img class="book-item" onClick="location.href="{% url 'spec' %}" src=${url}>
+                        <img class="book-item" onClick="location.href="" src=${url}>
                         <div class='shelf-item'></div>
                     </div>`
 
                 $("#abc").append(tempHtml);
             }
-
+*/
         </script>
 
 
@@ -166,65 +156,12 @@
 
 
         <div id="abc">
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book1 }}" class="book-item"></a>
+            {%  for list in booklist %}
+                <div class="books-box">
+                    <a href="{{ list.pk }}"><img src="{{ list.book_img }}" class="book-item"></a>
                 <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book2 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book3 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book4 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book5 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book6 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book7 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book8 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book9 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
-            <div class="books-box">
-                <a href="{% url 'spec' %}"><img src="{{ book10 }}" class="book-item"></a>
-                <div class='shelf-item'></div>
-            </div>
+                </div>
+            {% endfor %}
         </div>
-
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-
-            <div class="btn-group mr-2" role="group">
-                <button type="button" class="btn btn-secondary">1</button>
-                <button type="button" class="btn btn-secondary">2</button>
-                <button type="button" class="btn btn-secondary">3</button>
-                <button type="button" class="btn btn-secondary">4</button>
-                <button type="button" class="btn btn-secondary">5</button>
-                <button type="button" class="btn btn-secondary">6</button>
-                <button type="button" class="btn btn-secondary">7</button>
-                <button type="button" class="btn btn-secondary">8</button>
-                <button type="button" class="btn btn-secondary">9</button>
-                <button type="button" class="btn btn-secondary">10</button>
-            </div>
-
-        </div>
-
-
     </body>
 </html>
