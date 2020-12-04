@@ -118,64 +118,7 @@
 
         </style>
 
-        <script>
-            function showBookinside(title) {
-                // 1. 리뷰 목록을 서버에 요청하기
-                url = `/book?title=${title}`
-
-                $.ajax({
-                    type: "GET",
-                    url: url,
-                    data: {},
-                    success: function (response) {
-                        // 2. 요청 성공 여부 확인하기
-                        if (response["result"] == "success") {
-                            let books = response["books"];
-                            // 3. 요청 성공했을 때 리뷰를 올바르게 화면에 나타내기
-                            for (let i = 0; i < books.length; i++) {
-                                makeBook(books[i]["bookcover"],books[i]["title"],book[i]["author"],book[i]["explain"],music[i]["url"],book[i]["inthebook"]);
-                            }
-                        } else {
-                            alert("리뷰를 받아오지 못했습니다");
-                        }
-                    }
-                })
-            }
-
-
-            function makeBook(bookcover,title,author,explain,music,inthebook) {
-                let tempHtml =
-                    `
-        <div class="content">
-
-            <div class="aside">
-                <div class="book_info">
-                    <div class="book_cover"><img class="book-item" src=${url}></div>
-
-                    <div class="explanation">
-                        <a href="#" class="title">${title}</a>
-                        <p class="author">${author}</p>
-                        <p class="exp">${explain}</p>
-                    </div>
-                </div>
-
-                <div class="music">
-                    ${music}
-                </div>
-
-                </div>
-
-            <div class="main">
-                 <p class="inthebook">${inthebook}</p>
-            </div>
-        </div>
-
-                    `
-
-                $("#wrap").append(tempHtml);
-            }
-
-        </script>
+        <script></script>
 
 
     </head>
