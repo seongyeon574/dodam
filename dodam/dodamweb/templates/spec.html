@@ -57,7 +57,8 @@
             .content {
                 display: flex;
                 flex: 1;
-                flex-shrink:1;
+                flex-shrink: 1;
+                height : 100%;
             }
 
             .aside {
@@ -66,45 +67,50 @@
                 flex: none;
                 width: 50%;
                 padding-left: 10%;
-                flex-shrink:1;
+                flex-shrink: 1;
             }
 
             .main {
                 display: flex;
+                flex: 1;
+                overflow: auto;
+                flex-shrink: 1;
+                flex-direction: column;
                 margin-top: 7%;
                 padding-right: 10%;
                 padding-left: 3%;
                 margin-bottom: 7%;
-                flex: 1;
-                overflow: auto;
-                flex-shrink:1;
+
             }
 
-            .exp{
+
+            .exp {
                 display: flex;
                 overflow: auto;
                 flex: 1;
-                flex-shrink:1;
-                font-size : x-small;
+                font-size: smaller;
+                flex-shrink: 1;
             }
 
-            .book_item{
+
+            .book_item {
                 display: flex;
                 margin-top: 15%;
                 width: 175px;
                 height: 245px;
-                flex-shrink:1;
+                flex-shrink: 1;
+
             }
 
             .book_cover {
                 display: flex;
                 background-size: cover;
                 background-position: center;
+                border-radius: 4%;
                 width: 175px;
                 height: 245px;
                 margin-left: 3%;
-                flex-shrink:1;
-                border-radius: 4%;
+                flex-shrink: 1;
 
             }
 
@@ -113,30 +119,33 @@
                 flex-direction: column;
                 margin-top: 15%;
                 padding-left: 5%;
-                width : 70%;
-                /*font-size : small;*/
-                flex-shrink:1;
+                width: 70%;
+                font-size: small;
+                flex-shrink: 1;
             }
 
-            .book_info{
-                display : flex;
-                height : 50%;
-                margin-right:5%;
-                flex-shrink:1;
+            .book_info {
+                display: flex;
+                height: 50%;
+                margin-right: 5%;
+                flex-shrink: 1;
             }
 
 
             .music {
                 display: flex;
-                height : 30%;
-                margin-right : 5%;
-                margin-top: 5% ;
-                flex-shrink:1;
+                height: 30%;
+                margin-right: 5%;
+                margin-top: 5%;
+                flex-shrink: 1;
             }
 
-            .inthebook{
-                font-size : small;
-                flex-shrink:1;
+            .inthebook {
+                display: flex;
+                font-size: medium;
+                flex-shrink: 1;
+                margin-top : 40%;
+                margin-bottom : 40%;
             }
 
 
@@ -155,21 +164,31 @@
 
                 <div class="aside">
                     <div class="book_info">
-                    <div class="book_item"><img class="book_cover" src="{{book.book_img}}"></div>
+                        <div class="book_item"><img class="book_cover" src="{{book.book_img}}"></div>
 
-                    <div class="explanation">
-                        <a href="#" class="title">{{book.book_name}}</a>
-                        <p class="author">{{book.writer}}</p>
-                        <p class="exp">{{ book.short_intro }}</p>
-                    </div>
+                        <div class="explanation">
+                            <a href="#" class="title">{{book.book_name}}</a>
+                            <p class="author">{{book.writer}}</p>
+                            <p class="exp">{{ book.short_intro }}</p>
                         </div>
+                    </div>
 
                     <div class="music"></div>
 
                 </div>
 
                 <div class="main">
-                    <p class="inthebook">{{ book.short_intro }}</p>
+                    <p class="inthebook">{{ inbook0.full_intro }}</p>
+                    <p class="inthebook">{{ inbook1.full_intro }}</p>
+                    <p class="inthebook">{{ inbook2.full_intro }}</p>
+                    <p class="inthebook">{{ inbook3.full_intro }}</p>
+                    <p class="inthebook">{{ inbook4.full_intro }}</p>
+                    <p class="inthebook">{{ inbook5.full_intro }}</p>
+                    <p class="inthebook">{{ inbook6.full_intro }}</p>
+                    <p class="inthebook">{{ inbook7.full_intro }}</p>
+                    <p class="inthebook">{{ inbook8.full_intro }}</p>
+                    <p class="inthebook">{{ inbook9.full_intro }}</p>
+
                 </div>
             </div>
         </div>

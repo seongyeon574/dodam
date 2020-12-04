@@ -42,29 +42,11 @@
                 margin: 0;
             }
 
-            .nav-container {
-                display: flex;
-                flex-direction: row;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                background-color: darkseagreen;
-                list-style-type: none;
-            }
-
-            .nav-item {
-                padding: 5px;
-                cursor: pointer;
-                text-align: center;
-                text-decoration: white;
-                color: white;
-            }
-
 
             #abc {
                 display: flex;
                 flex-direction: row;
-                flex-wrap : wrap;
+                flex-wrap: wrap;
                 padding-top: 10px;
             }
 
@@ -81,7 +63,6 @@
 
 
             .book-item {
-                /*background-image: url("../static/book_example.jpeg");*/
                 background-size: cover;
                 background-position: center;
                 width: 175px;
@@ -101,49 +82,6 @@
 
         </style>
 
-        <script>
-            // 페이지로 넘어오면, 알아서 책을 띄워주는 함수 만들어서 실행시키기.
-            $(document).ready(function () {
-                $("#books-box").html("");
-                showBook();
-            });
-
-/*
-            function showBook(title) {
-                // 1. 리뷰 목록을 서버에 요청하기
-                url = `/book?title=${title}`
-
-                $.ajax({
-                    type: "GET",
-                    url: url,
-                    data: {},
-                    success: function (response) {
-                        // 2. 요청 성공 여부 확인하기
-                        if (response["result"] == "success") {
-                            let books = response["books"];
-                            // 3. 요청 성공했을 때 리뷰를 올바르게 화면에 나타내기
-                            for (let i = 0; i < books.length; i++) {
-                                makeBook(books[i]["bookcover"]);
-                            }
-                        } else {
-                            alert("리뷰를 받아오지 못했습니다");
-                        }
-                    }
-                })
-            }
-
-
-            function makeBook(bookcover) {
-                let tempHtml =
-                    `<div class ="books-box">
-                        <img class="book-item" onClick="location.href="" src=${url}>
-                        <div class='shelf-item'></div>
-                    </div>`
-
-                $("#abc").append(tempHtml);
-            }
-*/
-        </script>
 
 
     </head>
@@ -156,11 +94,11 @@
 
 
         <div id="abc">
-            {%  for list in booklist %}
-                <div class="books-box">
-                    <a href="{{ list.pk }}"><img src="{{ list.book_img }}" class="book-item"></a>
+            {% for list in booklist %}
+            <div class="books-box">
+                <a href="{{ list.pk }}"><img src="{{ list.book_img }}" class="book-item"></a>
                 <div class='shelf-item'></div>
-                </div>
+            </div>
             {% endfor %}
         </div>
     </body>
