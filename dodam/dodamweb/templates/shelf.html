@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta property="og:title" content="도담도담의 책장."/>
+        <meta property="og:description" content="우리나라의 퓨전 국악과 함께 100권의 한국 소설을 미리 읽어볼 수 있는 서비스를 제공합니다."/>
+        {% load static %}
+        <meta property=img src="{% static 'background.jpg' %}">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+
+
+        <!--JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+
+
+        <!-- 구글폰트 -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap"
+              rel="stylesheet">
+        <title>도담도담의 책장</title>
+
+
+        <!-- style -->
+        <style type="text/css">
+
+            * {
+                font-family: 'Nanum Myeongjo', serif;
+            }
+
+            body {
+                background-color: lightgrey;
+                margin: 0;
+            }
+
+            .nav-container {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: darkseagreen;
+                list-style-type: none;
+            }
+
+            .nav-item {
+                padding: 5px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: white;
+                color: white;
+            }
+
+
+            #abc {
+                display: flex;
+                flex-direction: row;
+                flex-wrap : wrap;
+                padding-top: 10px;
+            }
+
+
+            .books-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 20%;
+                height: 300px;
+                margin: 0 -5px;
+
+            }
+
+
+            .book-item {
+                /*background-image: url("../static/book_example.jpeg");*/
+                background-size: cover;
+                background-position: center;
+                width: 175px;
+                height: 245px;
+                margin-left: 45px;
+            }
+
+            .shelf-item {
+                background-image: url("../static/bookshelf.png");
+                background-size: cover;
+                background-position: center;
+                width: 262px;
+                height: 38px;
+                margin: 0 5px;
+            }
+
+
+        </style>
+
+        <script>
+            // 페이지로 넘어오면, 알아서 책을 띄워주는 함수 만들어서 실행시키기.
+            $(document).ready(function () {
+                $("#books-box").html("");
+                showBook();
+            });
+
+
+            function showBook(title) {
+                // 1. 리뷰 목록을 서버에 요청하기
+                url = `/book?title=${title}`
+
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    data: {},
+                    success: function (response) {
+                        // 2. 요청 성공 여부 확인하기
+                        if (response["result"] == "success") {
+                            let books = response["books"];
+                            // 3. 요청 성공했을 때 리뷰를 올바르게 화면에 나타내기
+                            for (let i = 0; i < books.length; i++) {
+                                makeBook(books[i]["bookcover"]);
+                            }
+                        } else {
+                            alert("리뷰를 받아오지 못했습니다");
+                        }
+                    }
+                })
+            }
+
+
+            function makeBook(bookcover) {
+                let tempHtml =
+                    `<div class ="books-box">
+                        <img class="book-item" onClick="location.href="{% url 'spec' %}" src=${url}>
+                        <div class='shelf-item'></div>
+                    </div>`
+
+                $("#abc").append(tempHtml);
+            }
+
+        </script>
+
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">도담도담의 책장.</a>
+        </nav>
+
+
+        <div id="abc">
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+            <div class="books-box">
+                <a href="{% url 'spec' %}"><img class="book-item"></a>
+                <div class='shelf-item'></div>
+            </div>
+
+
+        </div>
+
+
+    </body>
+</html>
